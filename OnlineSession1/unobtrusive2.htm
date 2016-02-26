@@ -1,0 +1,56 @@
+<html>
+<head>
+<body>
+
+<h5>
+This example shows how to proceed with a form submission (if a certain condition is true) or abort a submission (if a certain condition is false).
+<p>
+For the 1st form:
+<br>
+Note that when a return value of <i>true</i> is given, the form is submitted. When a return value of <i>false</i> is given, the submission is aborted.	
+<p>
+For the 2nd form:
+<br>
+Since the "return" keyword is omitted, the form is submitted regardless of what return value is given!
+</h5>
+<p>
+<hr>
+This is with the "return" keyword on the event handler
+<form id = "myForm"method="get" action="http://was6.itk.ilstu.edu:9080/itk/EchoAll">
+<INPUT TYPE="TEXT" NAME="box" VALUE="">
+</form>
+<input type="button" id="btn" value="Click Me"/>   Enter an even number here to submit the form
+<p>
+This is WITHOUT the "return" keyword on the event handler
+<form id = "myForm"method="get" action="http://was6.itk.ilstu.edu:9080/itk/EchoAll">
+<INPUT TYPE="TEXT" NAME="box" VALUE="">
+</form>
+<input type="button" id="btn2" value="Click Me"/>   Enter an even number here to submit the form
+
+
+<SCRIPT>
+var el = document.getElementById('btn');
+var el2 = document.getElementById('btn2');
+
+el.onclick = function () 
+{
+	var x = document.getElementById("myForm").elements[0].value;
+	if (parseInt(x)%2 == 0)
+	{
+  		document.getElementById('myForm').submit();
+	}
+	else
+	{
+		alert("Not an even numner")
+		return (false)
+	}
+}
+
+el2.onclick = function () 
+{
+	document.getElementById('myForm').submit();
+}
+</SCRIPT>
+</body>
+</head>
+</html>
