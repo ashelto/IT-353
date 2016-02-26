@@ -1,0 +1,49 @@
+<html>
+<head>
+<body>
+<h2>Part A</h2><br>
+<a href="./unobtrusive1.html">Link to the 1st unobtrusive javascript  function</a><br>
+<a href="./unobtrusive2.htm">Link to the 2nd unobtrusive javascript  function</a><br>
+<br>
+<h2>Part B</h2>
+<br>
+<pre>
+3. When the shopping cart, which is essentially an Item array with cost and capacity instance variables, reaches 3(which is the initial capacity or size) it runs 
+the increaseSize() method. What the increase size method does is creates a new item array called tempItem, with the same capacity as the original shopping cart, 
+then doubles the size (via the capacity instance variable) and copies all of the items from tempItem into the new shopping cart that is now half full (due to the 
+double in size).
+
+4. Basically what the program is doing is once the shopping cart is full, the program creates a temporary shopping cart, moves all of the items from the original 
+shopping cart to the temporary cart, doubles the size of the original shopping cart, then returns the items from the temporary shopping cart back to the original 
+shopping cart. 
+
+6. In this example the cart object is never created outside of the constructor, thus the cart would not be able to be identified, and eventually added to and 
+increased in size, thus creating a null pointer exception. 
+
+8. Many changes would have to be made to the Item class, first the abstract method would have to be created wit the logic(see below). Second, if you actually
+wanted to display the discounted price you would also have to change to toString method to show the discount(maybe?) and the new price. 
+
+Logic for the discount() abstract method. (note: this returns the final price after incorporating the discount)
+@Override
+        public double discount(double price, int quantity) 
+        {
+            price = getPrice();
+            quantity = getQuantity();
+            double totalPrice = price * quantity;
+            double discountPrice = totalPrice - (totalPrice *.10);
+            NumberFormat fmt = NumberFormat.getCurrencyInstance();
+            fmt.format(discountPrice);
+            return discountPrice;
+        }
+		
+9. No, you would need to factor in the discount before you added the price of that particular item the the total price. 
+
+10. This code would print out three dots if the total amount of the discount was greater than 20 cents.
+
+
+<pre>
+
+
+</body>
+</head>
+</html>

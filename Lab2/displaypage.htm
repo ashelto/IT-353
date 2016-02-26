@@ -1,0 +1,152 @@
+<html>
+<head>
+	<title>Page Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+	<script type="text/javascript" src="aaronScript.js"></script>
+	<link rel="stylesheet" type="text/css" href="wheelstyle.css">
+</head>
+<body>
+<button id="display" type="button" onclick="setTimeout(stop, Math.floor((Math.random() * 1000) + 0))">stop</button>   
+<button id ="alert" type="button" onclick="rotation();">rotate</button>
+<div id="container">
+
+<p id="demo"></p>
+<br><br><br><br><br><br><br><br><br><br>
+<img id="imgB" src="photos/arrow.jpg" alt="Aaron" style="width:100px;height:100px;"><br>
+<img  id= "imgA" src="photos/names.jpg" alt="Aaron" style="width:300px;height:300px;"> 
+<script>
+var rotation = function (){
+$("#animate").fadeOut("slow");
+$("#animate").animate({fontSize: '1px'}, "5000");
+  $("#imgA").rotate({
+    angle:0,
+    animateTo:360,
+    callback: rotation,
+    easing: function (x,t,b,c,d){        // t: current time, b: begInnIng value, c: change In value, d: duration
+      return c*(t/d)+b;
+    }
+  });
+}
+
+
+function stop()
+{
+    $("#imgA").stopRotate();
+	var x = $("#imgA").getRotateAngle();
+	var y = Math.floor((Math.random() * 1) + 0);
+	var name ="";
+	var names = ["Aaron Parrish", "Max Eppel", "Connor Dinardi ", "Aaron Boma", "Caleb Boma", "Matt Petersen", "Jordan Kociss", "Aaron Shelton"];
+	if(x < 45)
+	{
+		name = names[0];
+	}
+	else if (x>45 && x<91)
+	{
+	name = names[1];
+	}
+	else if(x>90 && x<136)
+	{
+	name = names[2];
+	}
+	else if(x>135 && x<181)
+	{
+	name = names[3];
+	}
+	else if(x>180 && x<226)
+	{
+	name = names[4];
+	}
+	else if (x>225 && x<271)
+	{
+	name = names[5];
+	}
+	else if (x>270 && x<316)
+	{
+	name = names[6];
+	}
+	else if (x>315)
+	{
+	name = names[7];
+	}
+	else
+	{
+	alert("uhoh...")
+	}
+	document.getElementById("animate").innerHTML = name;
+	$("#animate").fadeIn("slow");
+	$("#animate").animate({fontSize: '70px'}, "slow");
+	return name;
+	
+
+}	
+function fadeOut()
+{
+    $("#animate").fadeIn("slow");
+  
+}
+function display()
+{
+alert($("#imgA").getRotateAngle());
+var x = $("#imgA").getRotateAngle();
+return x;
+}
+
+function dispName()
+{
+	var x = $("#imgA").getRotateAngle();
+	var y = Math.floor((Math.random() * 1) + 0);
+	var name ="";
+	var names = ["Aaron Parish", "Max Eppel", "Connor Dinardi ", "Aaron Boma", "Adam Mccormick", "Matt Petersen", "Jordan Kociss", "Aaron Shelton"];
+	if(x < 45)
+	{
+		name = names[0];
+	}
+	else if (x>45 && x<91)
+	{
+	name = names[1];
+	}
+	else if(x>90 && x<136)
+	{
+	name = names[2];
+	}
+	else if(x>135 && x<181)
+	{
+	name = names[3];
+	}
+	else if(x>180 && x<226)
+	{
+	name = names[4];
+	}
+	else if (x>225 && x<271)
+	{
+	name = names[5];
+	}
+	else if (x>270 && x<316)
+	{
+	name = names[6];
+	}
+	else if (x>315)
+	{
+	name = names[7];
+	}
+	else
+	{
+	alert("uhoh...")
+	}
+	document.getElementById("animate").innerHTML = name;
+	$("#animate").fadeIn("slow");
+	$("#animate").animate({fontSize: '70px'}, "slow");
+	return name;
+	
+
+}	
+
+
+</script>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="animate" style = "display:none;"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+h1 {
+    color: white;
+}
+
+h2 {
+	color: orange;
+}
+
+#header {
+    background-color:black;
+    text-align:center;
+    padding:5px;
+}
+
+#nav {
+	background-color:#eeeeee;
+	float:left;
+	padding: 10px;
+
+}
+
+#section {
+	float: left;
+	margin: 10px;
+	display: block;
+	padding: 10px;
+
+}
+
+
+ pre {
+	align: left;
+	align: left;
+}
+
+table, th, td {
+
+    border: 1px solid black;
+	font-size: 12pt;
+}
+
+
